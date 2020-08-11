@@ -41,18 +41,20 @@
 
     <!-- Sign In -->
     <div class="container__form container--signin">
-        <form action="#" class="form" id="loginForm">
+        <form id="loginForm" action="/login" class="form" method="post">
             <h2 class="form__title">登录</h2>
             <label>
-                <input type="text" placeholder="用户名" class="input" required pattern="[a-zA-Z0-9]{3,10}"
+                <input id="name" name="name" type="text" placeholder="用户名" class="input"
+                       required pattern="[a-zA-Z0-9]{3,10}"
                        title="3-10位,由数字字母组成"/>
             </label>
             <label>
-                <input type="password" placeholder="密码" class="input" required pattern="[a-zA-Z0-9]{6,15}"
+                <input id="pwd" name="pwd" type="password" placeholder="密码" class="input"
+                       required pattern="[a-zA-Z0-9]{6,15}"
                        title="6-15位,由数字字母组成"/>
             </label>
-            <a href="#" class="link">忘记了密码?</a>
-            <button class="btn">登录</button>
+            <a href="" class="link">忘记了密码?</a>
+            <button class="btn" type="submit">登录</button>
         </form>
     </div>
 
