@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+    <script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+
+</head>
+
+<body>
+<div class="container right-panel-active">
+    <!-- Sign Up -->
+    <div class="container__form container--signup">
+        <form action="#" class="form" id="registerForm">
+            <h2 class="form__title">注册</h2>
+            <label>
+                <input type="text" placeholder="用户名 (3-10位,由数字字母组成)" class="input" required
+                       pattern="[a-zA-Z0-9]{3,10}"
+                       title="3-10位,由数字字母组成"/>
+            </label>
+            <label>
+                <input type="email" placeholder="邮箱 (填写合法的邮箱地址)" class="input" required/>
+            </label>
+            <label>
+                <input type="password" placeholder="密码 (6-15位,由数字字母组成)" class="input" required
+                       pattern="[a-zA-Z0-9]{6,15}"
+                       title="6-15位,由数字字母组成"/>
+            </label>
+            <label>
+                <input type="password" placeholder="确认密码 (再次输入密码)" class="input" required
+                       pattern="[a-zA-Z0-9]{6,15}"
+                       title="6-15位,由数字字母组成"/>
+            </label>
+            <button class="btn" type="submit">注册</button>
+        </form>
+    </div>
+
+    <!-- Sign In -->
+    <div class="container__form container--signin">
+        <form action="#" class="form" id="loginForm">
+            <h2 class="form__title">登录</h2>
+            <label>
+                <input type="text" placeholder="用户名" class="input" required pattern="[a-zA-Z0-9]{3,10}"
+                       title="3-10位,由数字字母组成"/>
+            </label>
+            <label>
+                <input type="password" placeholder="密码" class="input" required pattern="[a-zA-Z0-9]{6,15}"
+                       title="6-15位,由数字字母组成"/>
+            </label>
+            <a href="#" class="link">忘记了密码?</a>
+            <button class="btn">登录</button>
+        </form>
+    </div>
+
+    <!-- Overlay -->
+    <div class="container__overlay">
+        <div class="overlay">
+            <div class="overlay__panel overlay--left">
+                <button class="btn" id="signIn">登录</button>
+            </div>
+            <div class="overlay__panel overlay--right">
+                <button class="btn" id="signUp">注册</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    $('#signIn').click(function () {
+        $('.container').removeClass("right-panel-active")
+    })
+
+    $('#signUp').click(function () {
+        $('.container').addClass("right-panel-active")
+    })
+</script>
+
+</html>
